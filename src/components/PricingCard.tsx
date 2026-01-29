@@ -9,54 +9,84 @@ interface PricingCardProps {
 
 const PricingCard = ({ showForm = false }: PricingCardProps) => {
   return (
-    <div className="card-shadow bg-card p-5 sticky top-20">
-      <div className="flex items-start justify-between mb-1">
-        <div>
-          <div className="text-sm text-muted-foreground">Scenic Iceland With Diamond Circle</div>
-          <div className="flex items-baseline gap-2 mt-1">
-            <span className="text-2xl font-bold text-foreground">INR 2,30,206</span>
-            <span className="text-sm text-muted-foreground">Per Adult</span>
-          </div>
-          <div className="flex items-center gap-2 mt-1">
-            <span className="text-sm text-muted-foreground line-through">INR 3,06,106</span>
-            <span className="bg-sale text-primary-foreground text-xs px-2 py-0.5 rounded font-medium">
-              SAVE INR 75,900
-            </span>
-          </div>
-        </div>
-        <div className="flex items-center gap-1">
-          <Star className="w-4 h-4 fill-gold text-gold" />
-          <span className="font-semibold text-foreground">4.5</span>
-          <span className="text-muted-foreground text-sm">(40)</span>
-        </div>
-      </div>
-
-      {/* Republic Day Badge */}
-      <div className="flex items-center gap-2 my-4">
-        <div className="flex items-center gap-1 bg-sale text-primary-foreground px-3 py-1 rounded text-xs font-semibold">
-          🇮🇳 REPUBLIC DAY SALE!
+    <div className="card-shadow bg-card p-6 sticky top-20 rounded-xl">
+      {/* Package Title */}
+      <div className="mb-4">
+        <h3 className="text-base font-medium text-foreground">Scenic Iceland With Diamond Circle</h3>
+        <div className="flex items-baseline gap-2 mt-2">
+          <span className="text-2xl font-bold text-foreground">INR 2,30,206</span>
+          <span className="text-sm text-muted-foreground line-through">INR 3,06,106</span>
+          <span className="bg-sale text-primary-foreground text-xs px-2 py-0.5 rounded font-medium">
+            SAVE INR 75,900
+          </span>
         </div>
       </div>
 
       {showForm ? (
         <div className="space-y-4">
-          <Input placeholder="Full Name*" className="bg-background" />
-          <Input placeholder="Email*" type="email" className="bg-background" />
+          {/* Full Name */}
+          <div className="relative">
+            <Input 
+              placeholder="Full Name" 
+              className="bg-background border-border h-12 px-4 focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-primary">*</span>
+          </div>
+
+          {/* Email */}
+          <div className="relative">
+            <Input 
+              placeholder="Email" 
+              type="email" 
+              className="bg-background border-border h-12 px-4 focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-primary">*</span>
+          </div>
+
+          {/* Phone */}
           <div className="flex gap-2">
-            <div className="flex items-center border border-border rounded-md px-3 bg-background">
+            <div className="flex items-center border border-border rounded-md px-3 bg-background h-12 min-w-[70px]">
               <span className="text-muted-foreground text-sm">+91</span>
+              <svg className="w-4 h-4 ml-1 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
-            <Input placeholder="Your Phone*" className="bg-background flex-1" />
+            <div className="relative flex-1">
+              <Input 
+                placeholder="Your Phone" 
+                className="bg-background border-border h-12 px-4 focus:border-primary focus:ring-1 focus:ring-primary"
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-primary">*</span>
+            </div>
           </div>
-          <div className="flex gap-2">
-            <Input placeholder="Travel Date*" className="bg-background" />
-            <Input placeholder="Traveller Count*" className="bg-background" />
+
+          {/* Travel Date & Traveller Count */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="relative">
+              <Input 
+                placeholder="Travel Date" 
+                className="bg-background border-border h-12 px-4 focus:border-primary focus:ring-1 focus:ring-primary"
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-primary">*</span>
+            </div>
+            <div className="relative">
+              <Input 
+                placeholder="Traveller Count" 
+                className="bg-background border-border h-12 px-4 focus:border-primary focus:ring-1 focus:ring-primary"
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-primary">*</span>
+            </div>
           </div>
-          <Textarea placeholder="Message..." className="bg-background min-h-[80px]" />
+
+          {/* Message */}
+          <Textarea 
+            placeholder="Message..." 
+            className="bg-background border-border min-h-[100px] px-4 py-3 resize-none focus:border-primary focus:ring-1 focus:ring-primary"
+          />
         </div>
       ) : null}
 
-      <Button className="w-full btn-primary py-6 text-base mt-4">
+      <Button className="w-full btn-primary h-12 text-base font-semibold mt-5 rounded-lg">
         Send Enquiry
       </Button>
     </div>
