@@ -129,15 +129,6 @@ const ItinerarySection = () => {
         ))}
       </div>
 
-      {/* End of Trip */}
-      <div className="flex items-center justify-center py-12 mt-8">
-        <img 
-          src={journeyConcludes} 
-          alt="The Journey Concludes" 
-          className="max-w-full h-auto"
-          style={{ maxHeight: '80px' }}
-        />
-      </div>
     </div>
   );
 };
