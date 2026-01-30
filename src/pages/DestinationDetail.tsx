@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import ImageGallery from "@/components/ImageGallery";
+import journeyConcludes from "@/assets/journey-concludes.png";
 import PackageInfo from "@/components/PackageInfo";
 import PricingCard from "@/components/PricingCard";
 import TripHighlights from "@/components/TripHighlights";
@@ -39,8 +40,17 @@ const DestinationDetail = () => {
           </div>
         </div>
 
+        {/* The Journey Concludes - Full Width */}
+        <div className="flex items-center justify-center py-12 mt-8">
+          <img 
+            src={journeyConcludes} 
+            alt="The Journey Concludes" 
+            className="max-w-2xl w-full h-auto"
+          />
+        </div>
+
         {/* Full Width Content - After End of Trip */}
-        <div className="mt-8">
+        <div>
           <PackageInclusions />
 
           {/* Policy Sections */}
