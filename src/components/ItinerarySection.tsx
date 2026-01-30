@@ -6,7 +6,7 @@ import icelandMain from "@/assets/iceland-main.jpg";
 import icelandActivity from "@/assets/iceland-activity.jpg";
 import icelandStays from "@/assets/iceland-stays.jpg";
 import icelandWaterfall from "@/assets/iceland-waterfall.jpg";
-
+import journeyConcludes from "@/assets/journey-concludes.png";
 const reykjavikDays = [
   {
     day: 1,
@@ -130,8 +130,13 @@ const ItinerarySection = () => {
       </div>
 
       {/* End of Trip */}
-      <div className="text-center py-12 border-t border-border mt-8">
-        <h3 className="text-4xl md:text-5xl script-font text-gold">End Of Trip</h3>
+      <div className="flex items-center justify-center py-12 mt-8">
+        <img 
+          src={journeyConcludes} 
+          alt="The Journey Concludes" 
+          className="max-w-full h-auto"
+          style={{ maxHeight: '80px' }}
+        />
       </div>
     </div>
   );
